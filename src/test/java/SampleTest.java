@@ -18,23 +18,16 @@ public class SampleTest {
 
     @Before
     public void setUp() throws MalformedURLException {
-            DesiredCapabilities capabilities = new DesiredCapabilities();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("deviceName","Android Emulator");
             capabilities.setCapability("platformName","Android");
             capabilities.setCapability("platformVersion", "6.0");
-//            capabilities.setCapability("browserName", "Chrome");
-            capabilities.setCapability("app", "/Users/abatyrov/Documents/java_appium/appiumtutorial-master/ultimate_converter.apk");
+            capabilities.setCapability("app", "/Users/abatyrov/Documents/java_appium/junit_appium/ultimate_converter.apk");
             capabilities.setCapability("appPackage:","com.physphil.android.unitconverterultimate");
             capabilities.setCapability("appActivity:","com.physphil.android.unitconverterultimate.MainActivity");
 
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
-
-//    @Test
-//    public void firstTest() {
-//        this.driver.get("http://google.com");
-//        Assert.assertEquals("Title should be Google", "Google", driver.getTitle());
-//    }
 
     @Test
     public void appTest() {
